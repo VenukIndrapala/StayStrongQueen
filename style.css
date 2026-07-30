@@ -55,7 +55,8 @@ body {
 .floating-text {
   position: absolute;
   transform: translate(-50%, 0);
-  max-width: min(70vw, 280px);
+  /* Reduced max-width to ensure long sentences wrap neatly on mobile screens */
+  max-width: min(60vw, 220px);
   text-align: center;
   color: #f4f6ff;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
