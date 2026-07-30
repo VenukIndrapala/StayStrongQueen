@@ -42,7 +42,27 @@ body {
 }
 
 .figure .body,
-.figure .head,
-.figure .ponytail {
+.figure .head {
   fill: #000;
+}
+
+.figure--female .body,
+.figure--female .head,
+.figure--female .hair {
+  fill: #f4f6ff;
+}
+
+.figure--female {
+  filter: drop-shadow(0 0 3px #f4f6ff) drop-shadow(0 0 7px #f4f6ff);
+  animation: female-glow-pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes female-glow-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 3px #f4f6ff) drop-shadow(0 0 6px #f4f6ff);
+  }
+  50% {
+    filter: drop-shadow(0 0 5px #f4f6ff) drop-shadow(0 0 11px #f4f6ff);
+  }
 }
