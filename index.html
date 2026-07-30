@@ -4,16 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Night Sky</title>
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
   <canvas id="sky-canvas"></canvas>
 
+  <!-- Text layer is appended here or via JS behind the hill scene -->
+
   <svg class="hill-scene" viewBox="0 0 800 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <!-- Native SVG filter for the glow: renders reliably on mobile browsers,
-           unlike chained CSS drop-shadow() which can get clipped/dropped on some
-           mobile WebKit builds. Also pulses via SMIL <animate>. -->
       <filter id="figureGlow" x="-200%" y="-200%" width="500%" height="500%">
         <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="blur1">
           <animate attributeName="stdDeviation" values="1.6;2.6;1.6" dur="2.6s" repeatCount="indefinite" />
@@ -50,11 +49,11 @@
       <circle cx="0" cy="-4" r="9" />
     </g>
 
-    <!-- Glowing couple figures (from uploaded image, background removed), midway between signpost and bush -->
+    <!-- Glowing couple figures -->
     <image href="figures.png" x="365" y="49.3" width="70" height="56" filter="url(#figureGlow)" />
   </svg>
 
-  <script src="stars-sky.js?v=7"></script>
-  <script src="floating-texts.js?v=1"></script>
+  <script src="stars-sky.js?v=8"></script>
+  <script src="floating-texts.js?v=2"></script>
 </body>
 </html>
