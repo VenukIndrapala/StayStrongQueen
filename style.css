@@ -31,6 +31,7 @@ body {
   height: 26vh;
   z-index: 1;
   display: block;
+  overflow: visible;
 }
 
 .hill {
@@ -45,28 +46,4 @@ body {
 .figure--female .head,
 .figure--female .hair {
   fill: #f4f6ff;
-}
-
-.figure--female {
-  filter:
-    drop-shadow(0 0 4px #ffffff)
-    drop-shadow(0 0 10px #f4f6ff)
-    drop-shadow(0 0 20px #cfd8f5);
-  animation: female-glow-pulse 2.6s ease-in-out infinite;
-}
-
-@keyframes female-glow-pulse {
-  0%,
-  100% {
-    filter:
-      drop-shadow(0 0 4px #ffffff)
-      drop-shadow(0 0 10px #f4f6ff)
-      drop-shadow(0 0 20px #cfd8f5);
-  }
-  50% {
-    filter:
-      drop-shadow(0 0 6px #ffffff)
-      drop-shadow(0 0 14px #f4f6ff)
-      drop-shadow(0 0 26px #cfd8f5);
-  }
 }
