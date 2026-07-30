@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Night Sky</title>
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
   <canvas id="sky-canvas"></canvas>
@@ -14,15 +14,15 @@
       <!-- Native SVG filter for the glow: renders reliably on mobile browsers,
            unlike chained CSS drop-shadow() which can get clipped/dropped on some
            mobile WebKit builds. Also pulses via SMIL <animate>. -->
-      <filter id="femaleGlow" x="-200%" y="-200%" width="500%" height="500%">
-        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur1">
-          <animate attributeName="stdDeviation" values="2;3.2;2" dur="2.6s" repeatCount="indefinite" />
+      <filter id="figureGlow" x="-200%" y="-200%" width="500%" height="500%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="blur1">
+          <animate attributeName="stdDeviation" values="1.6;2.6;1.6" dur="2.6s" repeatCount="indefinite" />
         </feGaussianBlur>
-        <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur2">
-          <animate attributeName="stdDeviation" values="5;7;5" dur="2.6s" repeatCount="indefinite" />
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur2">
+          <animate attributeName="stdDeviation" values="4;5.6;4" dur="2.6s" repeatCount="indefinite" />
         </feGaussianBlur>
-        <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="blur3">
-          <animate attributeName="stdDeviation" values="9;12;9" dur="2.6s" repeatCount="indefinite" />
+        <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur3">
+          <animate attributeName="stdDeviation" values="7;9.5;7" dur="2.6s" repeatCount="indefinite" />
         </feGaussianBlur>
         <feMerge>
           <feMergeNode in="blur3" />
@@ -50,25 +50,10 @@
       <circle cx="0" cy="-4" r="9" />
     </g>
 
-    <!-- Glowing figure, sitting hugging her knees, midway between signpost and bush -->
-    <g class="prop figure figure--female" transform="translate(400,85)" filter="url(#femaleGlow)">
-      <!-- torso, hunched back -->
-      <ellipse class="body" cx="-6" cy="-6" rx="9" ry="14" transform="rotate(-12 -6 -6)" />
-      <!-- hip/seat resting on the ground -->
-      <ellipse class="body" cx="-2" cy="13" rx="12" ry="6" />
-      <!-- shin/arm mass blending seat into knees -->
-      <ellipse class="body" cx="5" cy="7" rx="7.5" ry="7" />
-      <!-- knees drawn up to chest -->
-      <ellipse class="body" cx="9" cy="-4" rx="7" ry="11" transform="rotate(12 9 -4)" />
-      <!-- head -->
-      <circle class="head" cx="-3" cy="-24" r="6.5" />
-      <!-- hair, back strand -->
-      <path class="hair" d="M -8,-27 C -14,-22 -16,-10 -13,2 C -12,7 -10,10 -7,11 C -9,5 -9,-6 -7,-16 C -6,-20 -6,-24 -8,-27 Z" />
-      <!-- hair, front strand -->
-      <path class="hair" d="M 2,-27 C 6,-23 7,-15 6,-4 C 5.7,-1 5,1 4,2 C 5,-2 5,-9 4,-15 C 3.5,-19 3.5,-23 2,-27 Z" />
-    </g>
+    <!-- Glowing couple figures (from uploaded image, background removed), midway between signpost and bush -->
+    <image href="figures.png" x="365" y="52.3" width="70" height="53" filter="url(#figureGlow)" />
   </svg>
 
-  <script src="stars-sky.js?v=6"></script>
+  <script src="stars-sky.js?v=7"></script>
 </body>
 </html>
