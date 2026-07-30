@@ -1,6 +1,4 @@
 (function () {
-  // 100 lines, each floats up once, starting 5s after page load.
-  // Spawn timing keeps roughly 3-5 lines visible on screen at a time.
   const sentences = [
   "Her cute face she makes when she tries to be angry",
   "Her little physical touches that she gives without her knowing",
@@ -113,11 +111,14 @@
     el.className = "floating-text";
     el.textContent = text;
 
-    const leftPct = 10 + Math.random() * 80; // keep clear of the edges
-    const bottomVh = 9 + Math.random() * 6; // roughly the top of the hill
-    const driftPx = Math.random() * 90 - 45; // gentle horizontal drift
-    const duration = 16 + Math.random() * 7; // 16-23s to cross the sky
-    const fontRem = 0.78 + Math.random() * 0.22;
+    // Adjusted safe zone bounds (18% to 82%) to prevent edge clipping on mobile
+    const leftPct = 18 + Math.random() * 64; 
+    const bottomVh = 6 + Math.random() * 4; 
+    const driftPx = Math.random() * 60 - 30; 
+    const duration = 16 + Math.random() * 7; 
+    
+    // Scaled down font size for better mobile fit
+    const fontRem = 0.68 + Math.random() * 0.18;
 
     el.style.left = leftPct + "%";
     el.style.bottom = bottomVh + "vh";
@@ -135,7 +136,7 @@
       if (i >= sentences.length) return;
       spawn(sentences[i]);
       i++;
-      const delay = 3200 + Math.random() * 1600; // 3.2-4.8s between spawns
+      const delay = 3200 + Math.random() * 1600; 
       setTimeout(next, delay);
     }
     next();
