@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Night Sky</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
   <canvas id="sky-canvas"></canvas>
@@ -27,20 +27,19 @@
       <circle cx="0" cy="-4" r="9" />
     </g>
 
-    <!-- Two figures sitting together -->
-    <g class="prop figure figure--male" transform="translate(392,118)">
-      <ellipse class="body" cx="0" cy="10" rx="13" ry="9" />
-      <circle class="head" cx="-1" cy="-4" r="7" />
-    </g>
-
-    <g class="prop figure figure--female" transform="translate(415,120)">
-      <path class="body" d="M -10,-6 C -12,-2 -12,5 -10,11 C -6,15 6,15 10,11 C 12,5 12,-2 10,-6 C 10,-9 6,-11 0,-11 C -6,-11 -10,-9 -10,-6 Z" />
-      <circle class="head" cx="0" cy="-15" r="6.2" />
-      <path class="hair" d="M -5.4,-19 C -10,-15 -11.5,-5 -9.5,4 C -8.8,7.5 -7,9.5 -5.5,10 C -7.5,5 -7.5,-5 -5.5,-12 C -4.8,-15 -4.8,-17.5 -5.4,-19 Z" />
-      <path class="hair" d="M 5.4,-19 C 10,-15 11.5,-5 9.5,4 C 8.8,7.5 7,9.5 5.5,10 C 7.5,5 7.5,-5 5.5,-12 C 4.8,-15 4.8,-17.5 5.4,-19 Z" />
+    <!-- Single glowing figure, sitting hugging her knees, right on the ridge/edge -->
+    <g class="prop figure figure--female" transform="translate(651,86)">
+      <!-- hair, left strand -->
+      <path class="hair" d="M -5.4,-23 C -11,-18 -13,-6 -11,6 C -10,11 -8,15 -6,17 C -8,10 -8,-2 -6,-12 C -5,-16 -5,-20 -5.4,-23 Z" />
+      <!-- body: hunched, knees drawn up, seen from behind -->
+      <path class="body" d="M -10,-8 C -13,-4 -13,4 -10,10 C -7,15 0,17 6,16 C 12,15 14,9 13,3 C 13,-3 11,-8 6,-11 C 3,-13 -6,-12 -10,-8 Z" />
+      <!-- hair, right strand (shorter, side part) -->
+      <path class="hair" d="M 5.4,-23 C 9,-19 10,-10 9,0 C 8.5,4 7,7 5.5,8 C 7,3 7,-6 5.5,-14 C 4.8,-18 4.8,-21 5.4,-23 Z" />
+      <!-- head -->
+      <circle class="head" cx="-1" cy="-19" r="6.5" />
     </g>
   </svg>
 
-  <script src="stars-sky.js?v=3"></script>
+  <script src="stars-sky.js?v=5"></script>
 </body>
 </html>
