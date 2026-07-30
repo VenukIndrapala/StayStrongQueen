@@ -4,12 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Night Sky</title>
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
   <canvas id="sky-canvas"></canvas>
 
   <svg class="hill-scene" viewBox="0 0 800 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Native SVG filter for the glow: renders reliably on mobile browsers,
+           unlike chained CSS drop-shadow() which can get clipped/dropped on some
+           mobile WebKit builds. Also pulses via SMIL <animate>. -->
+      <filter id="femaleGlow" x="-200%" y="-200%" width="500%" height="500%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur1">
+          <animate attributeName="stdDeviation" values="2;3.2;2" dur="2.6s" repeatCount="indefinite" />
+        </feGaussianBlur>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur2">
+          <animate attributeName="stdDeviation" values="5;7;5" dur="2.6s" repeatCount="indefinite" />
+        </feGaussianBlur>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="blur3">
+          <animate attributeName="stdDeviation" values="9;12;9" dur="2.6s" repeatCount="indefinite" />
+        </feGaussianBlur>
+        <feMerge>
+          <feMergeNode in="blur3" />
+          <feMergeNode in="blur2" />
+          <feMergeNode in="blur1" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
+
     <!-- Rolling hill silhouette -->
     <path class="hill" d="M0,130 C120,105 220,120 330,108 C420,98 480,118 560,104 C650,89 730,108 800,96 L800,220 L0,220 Z"></path>
 
@@ -27,19 +50,25 @@
       <circle cx="0" cy="-4" r="9" />
     </g>
 
-    <!-- Single glowing figure, sitting hugging her knees, right on the ridge/edge -->
-    <g class="prop figure figure--female" transform="translate(651,86)">
-      <!-- hair, left strand -->
-      <path class="hair" d="M -5.4,-23 C -11,-18 -13,-6 -11,6 C -10,11 -8,15 -6,17 C -8,10 -8,-2 -6,-12 C -5,-16 -5,-20 -5.4,-23 Z" />
-      <!-- body: hunched, knees drawn up, seen from behind -->
-      <path class="body" d="M -10,-8 C -13,-4 -13,4 -10,10 C -7,15 0,17 6,16 C 12,15 14,9 13,3 C 13,-3 11,-8 6,-11 C 3,-13 -6,-12 -10,-8 Z" />
-      <!-- hair, right strand (shorter, side part) -->
-      <path class="hair" d="M 5.4,-23 C 9,-19 10,-10 9,0 C 8.5,4 7,7 5.5,8 C 7,3 7,-6 5.5,-14 C 4.8,-18 4.8,-21 5.4,-23 Z" />
+    <!-- Glowing figure, sitting hugging her knees, midway between signpost and bush -->
+    <g class="prop figure figure--female" transform="translate(400,85)" filter="url(#femaleGlow)">
+      <!-- torso, hunched back -->
+      <ellipse class="body" cx="-6" cy="-6" rx="9" ry="14" transform="rotate(-12 -6 -6)" />
+      <!-- hip/seat resting on the ground -->
+      <ellipse class="body" cx="-2" cy="13" rx="12" ry="6" />
+      <!-- shin/arm mass blending seat into knees -->
+      <ellipse class="body" cx="5" cy="7" rx="7.5" ry="7" />
+      <!-- knees drawn up to chest -->
+      <ellipse class="body" cx="9" cy="-4" rx="7" ry="11" transform="rotate(12 9 -4)" />
       <!-- head -->
-      <circle class="head" cx="-1" cy="-19" r="6.5" />
+      <circle class="head" cx="-3" cy="-24" r="6.5" />
+      <!-- hair, back strand -->
+      <path class="hair" d="M -8,-27 C -14,-22 -16,-10 -13,2 C -12,7 -10,10 -7,11 C -9,5 -9,-6 -7,-16 C -6,-20 -6,-24 -8,-27 Z" />
+      <!-- hair, front strand -->
+      <path class="hair" d="M 2,-27 C 6,-23 7,-15 6,-4 C 5.7,-1 5,1 4,2 C 5,-2 5,-9 4,-15 C 3.5,-19 3.5,-23 2,-27 Z" />
     </g>
   </svg>
 
-  <script src="stars-sky.js?v=5"></script>
+  <script src="stars-sky.js?v=6"></script>
 </body>
 </html>
