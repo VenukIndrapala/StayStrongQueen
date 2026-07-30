@@ -41,9 +41,3 @@ body {
 .prop {
   fill: #000;
 }
-
-.figure--female .body,
-.figure--female .head,
-.figure--female .hair {
-  fill: #f4f6ff;
-}
