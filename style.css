@@ -23,7 +23,7 @@ body {
   z-index: 0;
 }
 
-/* Falling stars container matching video reference */
+/* Falling stars container adjusted to 45deg so stars travel downwards */
 .shooting-star-container {
   position: fixed;
   top: 0;
@@ -33,7 +33,7 @@ body {
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
-  transform: rotate(225deg);
+  transform: rotate(45deg);
 }
 
 .shooting_star {
