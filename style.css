@@ -23,7 +23,7 @@ body {
   z-index: 0;
 }
 
-/* Falling stars container restored to rotate 225deg for the original flowing animation style, moving downwards */
+/* Falling stars container spanning the full screen width and height */
 .shooting-star-container {
   position: fixed;
   top: 0;
@@ -63,19 +63,20 @@ body {
 
 @keyframes tail {
   0% { width: 0; }
-  30% { width: 100px; }
+  30% { width: 120px; }
   100% { width: 0; }
 }
 
 @keyframes shining {
   0% { width: 0; }
-  50% { width: 30px; }
+  50% { width: 35px; }
   100% { width: 0; }
 }
 
+/* Increased translation distance so stars travel all the way across the screen */
 @keyframes falling {
   0% { transform: translateX(0); }
-  100% { transform: translateX(1000px); }
+  100% { transform: translateX(1600px); }
 }
 
 /* Text layer placed behind the hill scene */
