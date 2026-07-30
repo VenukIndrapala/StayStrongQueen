@@ -111,14 +111,14 @@
     el.className = "floating-text";
     el.textContent = text;
 
-    // Adjusted safe zone bounds (18% to 82%) to prevent edge clipping on mobile
-    const leftPct = 18 + Math.random() * 64; 
+    // Tighter horizontal bounds (26% to 74%) to completely prevent edge clipping on mobile
+    const leftPct = 26 + Math.random() * 48; 
     const bottomVh = 6 + Math.random() * 4; 
-    const driftPx = Math.random() * 60 - 30; 
+    const driftPx = Math.random() * 40 - 20; 
     const duration = 16 + Math.random() * 7; 
     
-    // Scaled down font size for better mobile fit
-    const fontRem = 0.68 + Math.random() * 0.18;
+    // Kept font size compact and readable
+    const fontRem = 0.65 + Math.random() * 0.15;
 
     el.style.left = leftPct + "%";
     el.style.bottom = bottomVh + "vh";
