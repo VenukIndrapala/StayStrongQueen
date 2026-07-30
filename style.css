@@ -23,7 +23,7 @@ body {
   z-index: 0;
 }
 
-/* Falling stars container adjusted to 45deg so stars travel downwards */
+/* Falling stars container */
 .shooting-star-container {
   position: fixed;
   top: 0;
@@ -33,16 +33,15 @@ body {
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
-  transform: rotate(45deg);
 }
 
 .shooting_star {
   position: absolute;
   height: 2px;
-  background: linear-gradient(-45deg, rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
+  background: linear-gradient(45deg, rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
   border-radius: 999px;
   filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
-  animation: tail 3s ease-in-out infinite, falling 3s ease-in-out infinite;
+  animation: tail 3s ease-in-out infinite, fallingDown 3s ease-in-out infinite;
 }
 
 .shooting_star::before, .shooting_star::after {
@@ -51,7 +50,7 @@ body {
   top: calc(50% - 1px);
   right: 0;
   height: 2px;
-  background: linear-gradient(-45deg, rgba(0, 0, 255, 0), rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
+  background: linear-gradient(45deg, rgba(0, 0, 255, 0), rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
   transform: translateX(50%) rotateZ(45deg);
   border-radius: 100%;
   animation: shining 3s ease-in-out infinite;
@@ -63,19 +62,24 @@ body {
 
 @keyframes tail {
   0% { width: 0; }
-  30% { width: 100px; }
+  30% { width: 80px; }
   100% { width: 0; }
 }
 
 @keyframes shining {
   0% { width: 0; }
-  50% { width: 30px; }
+  50% { width: 25px; }
   100% { width: 0; }
 }
 
-@keyframes falling {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(1000px); }
+/* Explicitly animate downwards and rightwards from top to bottom */
+@keyframes fallingDown {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+  }
+  100% {
+    transform: translate(300px, 700px) rotate(45deg);
+  }
 }
 
 /* Text layer placed behind the hill scene */
