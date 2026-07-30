@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Night Sky</title>
+  <link rel="stylesheet" href="style_real.css?v=1">
+</head>
+<body>
+  <canvas id="sky-canvas"></canvas>
+
+  <svg class="hill-scene" viewBox="0 0 800 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Rolling hill silhouette -->
+    <path class="hill" d="M0,130 C120,105 220,120 330,108 C420,98 480,118 560,104 C650,89 730,108 800,96 L800,220 L0,220 Z"></path>
+
+    <!-- Signpost -->
+    <g class="prop signpost" transform="translate(330,95)">
+      <rect x="-2" y="0" width="4" height="34" />
+      <rect x="-12" y="-6" width="24" height="14" rx="1.5" />
+    </g>
+
+    <!-- Bush -->
+    <g class="prop bush" transform="translate(470,112)">
+      <circle cx="0" cy="6" r="12" />
+      <circle cx="-11" cy="10" r="9" />
+      <circle cx="11" cy="10" r="9" />
+      <circle cx="0" cy="-4" r="9" />
+    </g>
+
+    <!-- Two figures sitting together -->
+    <g class="prop figure figure--male" transform="translate(392,118)">
+      <ellipse class="body" cx="0" cy="10" rx="13" ry="9" />
+      <circle class="head" cx="-1" cy="-4" r="7" />
+    </g>
+
+    <g class="prop figure figure--female" transform="translate(412,118)">
+      <ellipse class="body" cx="0" cy="10" rx="12" ry="9" />
+      <circle class="head" cx="1" cy="-4" r="6.6" />
+      <path class="ponytail" d="M6.5,-6 C11,-4 11,3 7,5 C9,-1 8.5,-4 6.5,-6 Z" />
+    </g>
+  </svg>
+
+  <script src="stars-sky.js?v=1"></script>
+</body>
+</html>
