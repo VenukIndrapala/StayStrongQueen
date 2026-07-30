@@ -1,0 +1,48 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #05070f;
+}
+
+#sky-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hill-scene {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 26vh;
+  z-index: 1;
+  display: block;
+}
+
+.hill {
+  fill: #000;
+}
+
+.prop {
+  fill: #000;
+}
+
+.figure .body,
+.figure .head,
+.figure .ponytail {
+  fill: #000;
+}
