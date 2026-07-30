@@ -4,12 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Night Sky</title>
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
   <canvas id="sky-canvas"></canvas>
 
-  <!-- Text layer is appended here or via JS behind the hill scene -->
+  <div class="shooting-star-container">
+    <div class="shooting_star" style="top: 15%; left: 10%; animation-delay: 0.5s;"></div>
+    <div class="shooting_star" style="top: 35%; left: 40%; animation-delay: 1.8s;"></div>
+    <div class="shooting_star" style="top: 10%; left: 70%; animation-delay: 3.2s;"></div>
+    <div class="shooting_star" style="top: 55%; left: 20%; animation-delay: 2.1s;"></div>
+    <div class="shooting_star" style="top: 25%; left: 85%; animation-delay: 4.0s;"></div>
+    <div class="shooting_star" style="top: 65%; left: 60%; animation-delay: 1.2s;"></div>
+  </div>
 
   <svg class="hill-scene" viewBox="0 0 800 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -32,16 +39,13 @@
       </filter>
     </defs>
 
-    <!-- Rolling hill silhouette -->
     <path class="hill" d="M0,130 C120,105 220,120 330,108 C420,98 480,118 560,104 C650,89 730,108 800,96 L800,220 L0,220 Z"></path>
 
-    <!-- Signpost -->
     <g class="prop signpost" transform="translate(330,95)">
       <rect x="-2" y="0" width="4" height="34" />
       <rect x="-12" y="-6" width="24" height="14" rx="1.5" />
     </g>
 
-    <!-- Bush -->
     <g class="prop bush" transform="translate(470,112)">
       <circle cx="0" cy="6" r="12" />
       <circle cx="-11" cy="10" r="9" />
@@ -49,11 +53,10 @@
       <circle cx="0" cy="-4" r="9" />
     </g>
 
-    <!-- Glowing couple figures -->
     <image href="figures.png" x="365" y="49.3" width="70" height="56" filter="url(#figureGlow)" />
   </svg>
 
-  <script src="stars-sky.js?v=8"></script>
-  <script src="floating-texts.js?v=2"></script>
+  <script src="stars-sky.js?v=9"></script>
+  <script src="floating-texts.js?v=3"></script>
 </body>
 </html>
