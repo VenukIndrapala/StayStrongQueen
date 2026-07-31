@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Night Sky Garden</title>
-  <link rel="stylesheet" href="style.css?v=30">
+  <link rel="stylesheet" href="style.css?v=31">
 </head>
 <body class="not-loaded">
   <canvas id="sky-canvas"></canvas>
@@ -19,6 +19,57 @@
   </div>
 
   <div id="floating-text-layer"></div>
+
+  <!-- Grass filling the entire bottom black hill area using exact original grass-only code scaled to flower size -->
+  <div class="hill-grass-garden-wrapper">
+    <div class="grass-field">
+      <div class="grass-cluster" style="left: 2%;">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--1"></div><div class="flower__line__leaf flower__line__leaf--3"></div></div>
+      </div>
+      <div class="grass-cluster" style="left: 8%;">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--2"></div><div class="flower__line__leaf flower__line__leaf--4"></div></div>
+      </div>
+      <div class="grass-cluster" style="left: 14%;">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--1"></div><div class="flower__line__leaf flower__line__leaf--2"></div></div>
+      </div>
+      <div class="grass-cluster" style="left: 20%;">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--3"></div><div class="flower__line__leaf flower__line__leaf--4"></div></div>
+      </div>
+      <div class="grass-cluster" style="left: 26%;">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--1"></div><div class="flower__line__leaf flower__line__leaf--5"></div></div>
+      </div>
+      <div class="grass-cluster" style="left: 32%;">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--2"></div><div class="flower__line__leaf flower__line__leaf--6"></div></div>
+      </div>
+      <div class="grass-cluster" style="left: 38%;">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--3"></div></div>
+      </div>
+      <div class="grass-cluster" style="left: 55%;">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--4"></div></div>
+      </div>
+      <div class="grass-cluster" style="left: 62%;">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--1"></div><div class="flower__line__leaf flower__line__leaf--4"></div></div>
+      </div>
+      <div class="grass-cluster" style="left: 68%;">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--2"></div><div class="flower__line__leaf flower__line__leaf--3"></div></div>
+      </div>
+      <div class="grass-cluster" style="left: 74%;">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--1"></div><div class="flower__line__leaf flower__line__leaf--3"></div></div>
+      </div>
+      <div class="grass-cluster" style="left: 80%;">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--2"></div><div class="flower__line__leaf flower__line__leaf--4"></div></div>
+      </div>
+      <div class="grass-cluster" style="left: 86%;">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--1"></div><div class="flower__line__leaf flower__line__leaf--5"></div></div>
+      </div>
+      <div class="grass-cluster" style="left: 92%;">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--3"></div><div class="flower__line__leaf flower__line__leaf--4"></div></div>
+      </div>
+      <div class="grass-cluster" style="left: 97%;">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--2"></div></div>
+      </div>
+    </div>
+  </div>
 
   <svg class="hill-scene" viewBox="0 0 800 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -48,7 +99,7 @@
     <image href="figures.png" x="365" y="49.3" width="70" height="56" filter="url(#figureGlow)" />
   </svg>
 
-  <!-- Complete CSS Flower Garden Component without extra hill grass -->
+  <!-- Complete CSS Flower Garden Component (Original position and size strictly preserved) -->
   <div class="flowers-garden-wrapper">
     <div class="flowers">
       <div class="flower flower--1">
@@ -127,8 +178,8 @@
     </div>
   </div>
 
-  <script src="stars-sky.js?v=30"></script>
-  <script src="floating-texts.js?v=30"></script>
+  <script src="stars-sky.js?v=31"></script>
+  <script src="floating-texts.js?v=31"></script>
   <script>
     window.addEventListener('load', () => {
       document.body.classList.remove('not-loaded');
