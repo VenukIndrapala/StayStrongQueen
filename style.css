@@ -108,10 +108,10 @@ body {
   fill: #000;
 }
 
-/* Wrapper positioned precisely into the red circle zone between the flower and the figures */
+/* Wrapper brought straight up to align with the edge of the mountain hill */
 .flowers-garden-wrapper {
   position: fixed;
-  bottom: 7.5vh;
+  bottom: 12.5vh;
   left: 45%;
   transform: translateX(-50%);
   z-index: 3;
