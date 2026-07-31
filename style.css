@@ -108,44 +108,21 @@ body {
   fill: #000;
 }
 
-/* Grass animation container restricted strictly to the black hill area */
-.hill-grass-container {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 13vh;
-  z-index: 3;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.hill-grass-blade {
-  position: absolute;
-  width: 3px;
-  background: linear-gradient(to top, #1f6b52, #4caf7d);
-  border-radius: 3px 3px 0 0;
-  transform-origin: bottom center;
-  animation: hill-grass-sway 3s ease-in-out infinite alternate;
-}
-
-@keyframes hill-grass-sway {
-  0% { transform: rotate(-5deg); }
-  100% { transform: rotate(5deg); }
-}
-
-/* Wrapper brought straight up to align with the edge of the mountain hill */
+/* Wrapper spanning the whole screen width to cover the entire black hill area with original flower-stem grass animations */
 .flowers-garden-wrapper {
   position: fixed;
   bottom: 12.5vh;
-  left: 45%;
+  left: 50%;
+  width: 100vw;
   transform: translateX(-50%);
-  z-index: 4;
+  z-index: 3;
   pointer-events: none;
 }
 
 .flowers {
   position: relative;
+  width: 100%;
+  height: 0;
   transform: scale(0.125);
   transform-origin: bottom center;
 }
@@ -164,7 +141,9 @@ body {
   --fl-speed: 0.8s;
 }
 
+/* Positioning main flower group at the exact requested spot */
 .flower--1 {
+  left: 45%;
   animation: moving-flower-1 4s linear infinite;
 }
 .flower--1 .flower__line {
@@ -191,7 +170,7 @@ body {
 }
 
 .flower--2 {
-  left: 50%;
+  left: calc(45% + 15vmin);
   transform: rotate(20deg);
   animation: moving-flower-2 4s linear infinite;
 }
@@ -213,7 +192,7 @@ body {
 }
 
 .flower--3 {
-  left: 50%;
+  left: calc(45% - 20vmin);
   transform: rotate(-15deg);
   animation: moving-flower-3 4s linear infinite;
 }
@@ -231,6 +210,31 @@ body {
 }
 .flower--3 .flower__line__leaf--4 {
   animation: blooming-leaf-left var(--fl-speed) 1.9s backwards;
+}
+
+/* Grass clusters distributing grass across the entire black hill area */
+.grass-cluster {
+  position: absolute;
+  bottom: 10vmin;
+  transform-origin: bottom center;
+  z-index: 5;
+}
+.grass-cluster--1 { left: 5%; transform: rotate(-12deg) scale(0.8); animation: moving-flower-1 4.5s linear infinite; }
+.grass-cluster--2 { left: 15%; transform: rotate(10deg) scale(0.9); animation: moving-flower-2 3.8s linear infinite; }
+.grass-cluster--3 { left: 25%; transform: rotate(-8deg) scale(0.85); animation: moving-flower-3 4.2s linear infinite; }
+.grass-cluster--4 { left: 35%; transform: rotate(15deg) scale(0.9); animation: moving-flower-1 4.1s linear infinite; }
+.grass-cluster--5 { left: 55%; transform: rotate(-10deg) scale(0.8); animation: moving-flower-2 3.9s linear infinite; }
+.grass-cluster--6 { left: 65%; transform: rotate(12deg) scale(0.85); animation: moving-flower-3 4.3s linear infinite; }
+.grass-cluster--7 { left: 75%; transform: rotate(-15deg) scale(0.75); animation: moving-flower-1 4.6s linear infinite; }
+.grass-cluster--8 { left: 85%; transform: rotate(8deg) scale(0.8); animation: moving-flower-2 4s linear infinite; }
+.grass-cluster--9 { left: 93%; transform: rotate(-5deg) scale(0.85); animation: moving-flower-3 4.1s linear infinite; }
+.grass-cluster--10 { left: 97%; transform: rotate(10deg) scale(0.7); animation: moving-flower-1 4.4s linear infinite; }
+
+.grass-cluster .flower__line {
+  height: 45vmin;
+  width: 1.2vmin;
+  background-image: linear-gradient(to top, transparent 10%, #1f6b52, #4caf7d);
+  animation: grow-flower-tree 3s backwards;
 }
 
 .flower__leafs {
