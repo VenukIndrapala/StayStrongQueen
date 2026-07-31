@@ -9,13 +9,14 @@
 <body class="not-loaded">
   <canvas id="sky-canvas"></canvas>
 
+  <!-- Shooting star container scaled up and repositioned to cover entire screen (mobile friendly) -->
   <div class="shooting-star-container">
-    <div class="shooting_star" style="top: 10%; left: -20%; animation-delay: 0.2s;"></div>
-    <div class="shooting_star" style="top: 30%; left: -10%; animation-delay: 1.5s;"></div>
-    <div class="shooting_star" style="top: 50%; left: -30%; animation-delay: 2.8s;"></div>
-    <div class="shooting_star" style="top: 20%; left: 0%; animation-delay: 1.0s;"></div>
-    <div class="shooting_star" style="top: 40%; left: -15%; animation-delay: 3.5s;"></div>
-    <div class="shooting_star" style="top: 60%; left: -25%; animation-delay: 0.8s;"></div>
+    <div class="shooting_star" style="top: -10%; left: -40%; animation-delay: 0.2s;"></div>
+    <div class="shooting_star" style="top: 40%; left: -20%; animation-delay: 1.5s;"></div>
+    <div class="shooting_star" style="top: 90%; left: -50%; animation-delay: 2.8s;"></div>
+    <div class="shooting_star" style="top: 10%; left: 10%; animation-delay: 1.0s;"></div>
+    <div class="shooting_star" style="top: 60%; left: -30%; animation-delay: 3.5s;"></div>
+    <div class="shooting_star" style="top: 110%; left: -60%; animation-delay: 0.8s;"></div>
   </div>
 
   <div id="floating-text-layer"></div>
@@ -41,14 +42,11 @@
       </filter>
     </defs>
 
-    <!-- Rolling hill silhouette -->
     <path class="hill" d="M0,130 C120,105 220,120 330,108 C420,98 480,118 560,104 C650,89 730,108 800,96 L800,220 L0,220 Z"></path>
 
-    <!-- Glowing couple figures standing on the hill -->
     <image href="figures.png" x="365" y="49.3" width="70" height="56" filter="url(#figureGlow)" />
   </svg>
 
-  <!-- Complete CSS Flower Garden Component (Brought straight up to the edge of the hill) -->
   <div class="flowers-garden-wrapper">
     <div class="flowers">
       <div class="flower flower--1">
@@ -111,6 +109,7 @@
           <div class="flower__light flower__light--1"></div>
           <div class="flower__light flower__light--2"></div>
           <div class="flower__light flower__light--3"></div>
+          <div class="shooting_star" style="top: 40%; left: -15%; animation-delay: 3.5s;"></div>
           <div class="flower__light flower__light--4"></div>
           <div class="flower__light flower__light--5"></div>
           <div class="flower__light flower__light--6"></div>
