@@ -108,13 +108,39 @@ body {
   fill: #000;
 }
 
+/* Grass animation container restricted strictly to the black hill area */
+.hill-grass-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 13vh;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hill-grass-blade {
+  position: absolute;
+  width: 3px;
+  background: linear-gradient(to top, #1f6b52, #4caf7d);
+  border-radius: 3px 3px 0 0;
+  transform-origin: bottom center;
+  animation: hill-grass-sway 3s ease-in-out infinite alternate;
+}
+
+@keyframes hill-grass-sway {
+  0% { transform: rotate(-5deg); }
+  100% { transform: rotate(5deg); }
+}
+
 /* Wrapper brought straight up to align with the edge of the mountain hill */
 .flowers-garden-wrapper {
   position: fixed;
   bottom: 12.5vh;
   left: 45%;
   transform: translateX(-50%);
-  z-index: 3;
+  z-index: 4;
   pointer-events: none;
 }
 
