@@ -28,17 +28,18 @@ body {
   z-index: 0;
 }
 
-/* Falling/Shooting stars container */
+/* Scaled up and repositioned shooting star container to cover the entire screen and prevent mid-screen stops on mobile */
 .shooting-star-container {
   position: fixed;
-  top: -20vh;
-  left: -20vw;
-  width: 140vw;
-  height: 140vh;
+  top: -50vh; /* Starts much higher */
+  left: -50vw; /* Starts much further left */
+  width: 200vw; /* Spans double viewport width */
+  height: 200vh; /* Spans double viewport height */
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
   transform: rotate(225deg) scaleY(-1);
+  opacity: 0.8; /* Slight fade for effect */
 }
 
 .shooting_star {
@@ -47,7 +48,8 @@ body {
   background: linear-gradient(-45deg, rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
   border-radius: 999px;
   filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
-  animation: tail 3s ease-in-out infinite, falling 3s ease-in-out infinite;
+  /* Increased animation duration for a smoother, more complete path across the larger area */
+  animation: tail 4s ease-in-out infinite, falling 4s ease-in-out infinite;
 }
 
 .shooting_star::before, .shooting_star::after {
@@ -59,28 +61,29 @@ body {
   background: linear-gradient(-45deg, rgba(0, 0, 255, 0), rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
   transform: translateX(50%) rotateZ(45deg);
   border-radius: 100%;
-  animation: shining 3s ease-in-out infinite;
+  animation: shining 4s ease-in-out infinite;
 }
 
 .shooting_star::after {
   transform: translateX(50%) rotateZ(-45deg);
 }
 
+/* Adjusted animations for the new 4s duration */
 @keyframes tail {
   0% { width: 0; }
-  30% { width: 150px; }
+  20% { width: 250px; } /* Longer tail during peak */
   100% { width: 0; }
 }
 
 @keyframes shining {
   0% { width: 0; }
-  50% { width: 40px; }
+  40% { width: 60px; }
   100% { width: 0; }
 }
 
 @keyframes falling {
   0% { transform: translateX(0); }
-  100% { transform: translateX(2200px); }
+  100% { transform: translateX(3500px); } /* Further travel distance */
 }
 
 /* Floating text layer placed behind the hill scene */
@@ -228,220 +231,4 @@ body {
   transform: translate(-50%, -100%);
   width: 8vmin;
   height: 8vmin;
-  background-color: #f2a6c2;
-  filter: blur(10vmin);
-}
-
-.flower__leaf {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 8vmin;
-  height: 11vmin;
-  border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
-  background-color: #f7f4e9;
-  background-image: linear-gradient(to top, #d8d3bd, #f7f4e9);
-  transform-origin: bottom center;
-  opacity: 0.9;
-  box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
-}
-.flower__leaf--1 {
-  transform: translate(-10%, 1%) rotateY(40deg) rotateX(-50deg);
-}
-.flower__leaf--2 {
-  transform: translate(-50%, -4%) rotateX(40deg);
-}
-.flower__leaf--3 {
-  transform: translate(-90%, 0%) rotateY(45deg) rotateX(50deg);
-}
-.flower__leaf--4 {
-  width: 8vmin;
-  height: 8vmin;
-  transform-origin: bottom left;
-  border-radius: 4vmin 10vmin 4vmin 4vmin;
-  transform: translate(0%, 18%) rotateX(70deg) rotate(-43deg);
-  background-image: linear-gradient(to top, #e3dfc9, #f7f4e9);
-  z-index: 1;
-  opacity: 0.8;
-}
-
-.flower__white-circle {
-  position: absolute;
-  left: -3.5vmin;
-  top: -3vmin;
-  width: 9vmin;
-  height: 4vmin;
-  border-radius: 50%;
-  background-color: #fff;
-}
-.flower__white-circle::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 45%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-  height: 60%;
-  border-radius: inherit;
-  background-image: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, rgb(255, 235, 18), rgb(255, 206, 0));
-}
-
-.flower__line {
-  height: 55vmin;
-  width: 1.5vmin;
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent, rgba(255, 255, 255, 0.2)), linear-gradient(to top, transparent 10%, #1f6b52, #4caf7d);
-  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
-  animation: grow-flower-tree 4s backwards;
-}
-.flower__line__leaf {
-  --w: 7vmin;
-  --h: calc(var(--w) + 2vmin);
-  position: absolute;
-  top: 20%;
-  left: 90%;
-  width: var(--w);
-  height: var(--h);
-  border-top-right-radius: var(--h);
-  border-bottom-left-radius: var(--h);
-  background-image: linear-gradient(to top, rgba(31, 107, 82, 0.4), #4caf7d);
-}
-.flower__line__leaf--1 {
-  transform: rotate(70deg) rotateY(30deg);
-}
-.flower__line__leaf--2 {
-  top: 45%;
-  transform: rotate(70deg) rotateY(30deg);
-}
-.flower__line__leaf--3, .flower__line__leaf--4 {
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: var(--h);
-  border-bottom-right-radius: var(--h);
-  left: -460%;
-  top: 12%;
-  transform: rotate(-70deg) rotateY(30deg);
-}
-.flower__line__leaf--4 {
-  top: 40%;
-}
-.flower__line__leaf--5 {
-  top: 0;
-  transform-origin: left;
-  transform: rotate(70deg) rotateY(30deg) scale(0.6);
-}
-.flower__line__leaf--6 {
-  top: -2%;
-  left: -450%;
-  transform-origin: right;
-  transform: rotate(-70deg) rotateY(30deg) scale(0.6);
-}
-
-.flower__light {
-  position: absolute;
-  bottom: 0vmin;
-  width: 1vmin;
-  height: 1vmin;
-  background-color: rgb(255, 251, 0);
-  border-radius: 50%;
-  filter: blur(0.2vmin);
-  animation: light-ans 4s linear infinite backwards;
-}
-.flower__light:nth-child(odd) {
-  background-color: #e8698f;
-}
-.flower__light--1 { left: -2vmin; animation-delay: 1s; }
-.flower__light--2 { left: 3vmin; animation-delay: 0.5s; }
-.flower__light--3 { left: -6vmin; animation-delay: 0.3s; }
-.flower__light--4 { left: 6vmin; animation-delay: 0.9s; }
-.flower__light--5 { left: -1vmin; animation-delay: 1.5s; }
-.flower__light--6 { left: -4vmin; animation-delay: 3s; }
-.flower__light--7 { left: 3vmin; animation-delay: 2s; }
-.flower__light--8 { left: -6vmin; animation-delay: 3.5s; }
-
-/* Animations */
-@keyframes tail {
-  0% { width: 0; }
-  30% { width: 150px; }
-  100% { width: 0; }
-}
-@keyframes shining {
-  0% { width: 0; }
-  50% { width: 40px; }
-  100% { width: 0; }
-}
-@keyframes falling {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(2200px); }
-}
-@keyframes light-ans {
-  0% { opacity: 0; transform: translateY(0vmin); }
-  25% { opacity: 1; transform: translateY(-5vmin) translateX(-2vmin); }
-  50% { opacity: 1; transform: translateY(-15vmin) translateX(2vmin); filter: blur(0.2vmin); }
-  75% { transform: translateY(-20vmin) translateX(-2vmin); filter: blur(0.2vmin); }
-  100% { transform: translateY(-30vmin); opacity: 0; filter: blur(1vmin); }
-}
-@keyframes moving-flower-1 {
-  0%, 100% { transform: rotate(2deg); }
-  50% { transform: rotate(-2deg); }
-}
-@keyframes moving-flower-2 {
-  0%, 100% { transform: rotate(18deg); }
-  50% { transform: rotate(14deg); }
-}
-@keyframes moving-flower-3 {
-  0%, 100% { transform: rotate(-18deg); }
-  50% { transform: rotate(-20deg) rotateY(-10deg); }
-}
-@keyframes blooming-leaf-right {
-  0% { transform-origin: left; transform: rotate(70deg) rotateY(30deg) scale(0); }
-}
-@keyframes blooming-leaf-left {
-  0% { transform-origin: right; transform: rotate(-70deg) rotateY(30deg) scale(0); }
-}
-@keyframes grow-flower-tree {
-  0% { height: 0; border-radius: 1vmin; }
-}
-@keyframes blooming-flower {
-  0% { transform: scale(0); }
-}
-
-.not-loaded * {
-  animation-play-state: paused !important;
-}
-
-/* Floating message styles */
-.floating-text {
-  position: absolute;
-  transform: translate(-50%, 0);
-  max-width: min(60vw, 220px);
-  text-align: center;
-  color: #f4f6ff;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  line-height: 1.35;
-  text-shadow:
-    0 0 4px #ffffff,
-    0 0 10px #f4f6ff,
-    0 0 18px #cfd8f5;
-  opacity: 0;
-  white-space: normal;
-  animation-name: floatUp;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-
-@keyframes floatUp {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 0);
-  }
-  8% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(calc(-50% + var(--drift, 0px)), -115vh);
-  }
-}
+  background-color
