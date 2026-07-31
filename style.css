@@ -28,7 +28,6 @@ body {
   z-index: 0;
 }
 
-/* Scaled up and repositioned shooting star container covering the screen safely */
 .shooting-star-container {
   position: fixed;
   top: -50vh;
@@ -84,13 +83,13 @@ body {
   100% { transform: translateX(3500px); }
 }
 
-/* Floating text layer restored to correct above-background z-index */
+/* Floating text layer placed behind the hill scene (z-index: 1) so texts emerge from behind the mountain and figures */
 #floating-text-layer {
   position: fixed;
   inset: 0;
   overflow: hidden;
   pointer-events: none;
-  z-index: 4;
+  z-index: 1;
 }
 
 .hill-scene {
@@ -109,7 +108,6 @@ body {
   fill: #000;
 }
 
-/* Wrapper brought straight up to align with the edge of the mountain hill with corrected visibility z-index */
 .flowers-garden-wrapper {
   position: fixed;
   bottom: 12.5vh;
@@ -359,7 +357,6 @@ body {
 .flower__light--7 { left: 3vmin; animation-delay: 2s; }
 .flower__light--8 { left: -6vmin; animation-delay: 3.5s; }
 
-/* Animations */
 @keyframes tail {
   0% { width: 0; }
   30% { width: 150px; }
@@ -410,14 +407,14 @@ body {
   animation-play-state: paused !important;
 }
 
-/* Floating message styles */
+/* Floating message styles updated with Quiche Flare font family */
 .floating-text {
   position: absolute;
   transform: translate(-50%, 0);
   max-width: min(60vw, 220px);
   text-align: center;
   color: #f4f6ff;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: "quiche-flare", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   line-height: 1.35;
   text-shadow:
     0 0 4px #ffffff,
