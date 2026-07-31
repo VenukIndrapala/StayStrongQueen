@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Night Sky Garden</title>
-  <link rel="stylesheet" href="style.css?v=26">
+  <link rel="stylesheet" href="style.css?v=27">
 </head>
 <body class="not-loaded">
   <canvas id="sky-canvas"></canvas>
@@ -48,9 +48,10 @@
     <image href="figures.png" x="365" y="49.3" width="70" height="56" filter="url(#figureGlow)" />
   </svg>
 
-  <!-- Complete CSS Flower Garden Component (Brought straight up to the edge of the hill) -->
+  <!-- Complete CSS Flower Garden Component with full hill grass coverage -->
   <div class="flowers-garden-wrapper">
     <div class="flowers">
+      <!-- Main flower cluster -->
       <div class="flower flower--1">
         <div class="flower__leafs flower__leafs--1">
           <div class="flower__leaf flower__leaf--1"></div>
@@ -124,11 +125,37 @@
           <div class="flower__line__leaf flower__line__leaf--4"></div>
         </div>
       </div>
+
+      <!-- Additional grass/foliage clusters to fully cover the hill -->
+      <div class="grass-cluster grass-cluster--1">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--1"></div><div class="flower__line__leaf flower__line__leaf--3"></div></div>
+      </div>
+      <div class="grass-cluster grass-cluster--2">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--2"></div><div class="flower__line__leaf flower__line__leaf--4"></div></div>
+      </div>
+      <div class="grass-cluster grass-cluster--3">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--1"></div><div class="flower__line__leaf flower__line__leaf--2"></div></div>
+      </div>
+      <div class="grass-cluster grass-cluster--4">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--3"></div><div class="flower__line__leaf flower__line__leaf--4"></div></div>
+      </div>
+      <div class="grass-cluster grass-cluster--5">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--1"></div><div class="flower__line__leaf marker"></div></div>
+      </div>
+      <div class="grass-cluster grass-cluster--6">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--2"></div></div>
+      </div>
+      <div class="grass-cluster grass-cluster--7">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--3"></div></div>
+      </div>
+      <div class="grass-cluster grass-cluster--8">
+        <div class="flower__line"><div class="flower__line__leaf flower__line__leaf--4"></div></div>
+      </div>
     </div>
   </div>
 
-  <script src="stars-sky.js?v=26"></script>
-  <script src="floating-texts.js?v=26"></script>
+  <script src="stars-sky.js?v=27"></script>
+  <script src="floating-texts.js?v=27"></script>
   <script>
     window.addEventListener('load', () => {
       document.body.classList.remove('not-loaded');
