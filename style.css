@@ -83,7 +83,6 @@ body {
   100% { transform: translateX(3500px); }
 }
 
-/* Floating text layer placed behind the hill scene (z-index: 1) so texts emerge from behind the mountain and figures */
 #floating-text-layer {
   position: fixed;
   inset: 0;
@@ -369,7 +368,7 @@ body {
 }
 @keyframes falling {
   0% { transform: translateX(0); }
-  100% { transform: translateX(2200px); }
+  100% { transform: translateX(3500px); }
 }
 @keyframes light-ans {
   0% { opacity: 0; transform: translateY(0vmin); }
@@ -407,7 +406,6 @@ body {
   animation-play-state: paused !important;
 }
 
-/* Floating message styles updated with Quiche Flare font family */
 .floating-text {
   position: absolute;
   transform: translate(-50%, 0);
