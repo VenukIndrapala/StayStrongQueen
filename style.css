@@ -108,11 +108,11 @@ body {
   fill: #000;
 }
 
-/* Wrapper to anchor the CSS flower garden right onto the hill peak */
+/* Wrapper to anchor and scale the CSS flower garden next to the figures on the left */
 .flowers-garden-wrapper {
   position: fixed;
-  bottom: 4vh;
-  left: 50%;
+  bottom: 6.5vh;
+  left: 42%;
   transform: translateX(-50%);
   z-index: 3;
   pointer-events: none;
@@ -120,13 +120,13 @@ body {
 
 .flowers {
   position: relative;
-  transform: scale(0.65);
+  transform: scale(0.22);
   transform-origin: bottom center;
 }
 
 @media (max-width: 600px) {
   .flowers {
-    transform: scale(0.5);
+    transform: scale(0.18);
   }
 }
 
