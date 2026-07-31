@@ -108,10 +108,9 @@ body {
 }
 
 .flowers .flower-stem,
-.flowers .flower-center,
-.flowers .petal {
+.flowers circle,
+.flowers .leaf {
   fill: #000;
-  stroke: #000;
 }
 
 .floating-text {
