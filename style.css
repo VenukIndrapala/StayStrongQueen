@@ -108,11 +108,11 @@ body {
   fill: #000;
 }
 
-/* Wrapper positioned right at the left edge of the hill */
+/* Wrapper positioned back closer to the glowing figures (matching previous signpost position) */
 .flowers-garden-wrapper {
   position: fixed;
   bottom: 7.5vh;
-  left: 20%;
+  left: 35%;
   transform: translateX(-50%);
   z-index: 3;
   pointer-events: none;
@@ -120,13 +120,13 @@ body {
 
 .flowers {
   position: relative;
-  transform: scale(0.18);
+  transform: scale(0.14);
   transform-origin: bottom center;
 }
 
 @media (max-width: 600px) {
   .flowers {
-    transform: scale(0.14);
+    transform: scale(0.11);
   }
 }
 
