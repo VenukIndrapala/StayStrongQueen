@@ -73,7 +73,6 @@ body {
   100% { width: 0; }
 }
 
-/* Expanded translation distance to ensure stars travel completely across the screen bounds */
 @keyframes falling {
   0% { transform: translateX(0); }
   100% { transform: translateX(2200px); }
@@ -106,6 +105,13 @@ body {
 
 .prop {
   fill: #000;
+}
+
+.flowers .flower-stem,
+.flowers .flower-center,
+.flowers .petal {
+  fill: #000;
+  stroke: #000;
 }
 
 .floating-text {
